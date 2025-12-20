@@ -32,7 +32,7 @@ export default function AIResumeAnalyzer() {
   setFile(f);
 
   if (f) {
-    const preview = URL.createObjectURL(f);  // ⚡ this creates the preview URL
+    const preview = URL.createObjectURL(f);  //  this creates the preview URL
     setPdfUrl(preview);
   }
 };

@@ -14,10 +14,16 @@ Company: ${body.company}
 Experience: ${body.experience}
 Skills: ${body.skills}
 
-Rules:
-- Professional tone
-- 3–4 paragraphs
-- Strong closing
+Rules (VERY IMPORTANT):
+- Output ONLY normal plain text
+- DO NOT use markdown
+- DO NOT use **bold**
+- DO NOT use bullet points
+- DO NOT use emojis
+- Use normal paragraphs
+- Use line breaks only
+- Keep it ATS friendly
+- Write 3 to 4 paragraphs with a strong closing
 `;
 
     const response = await llm.invoke(prompt);
@@ -26,8 +32,8 @@ Rules:
       success: true,
       coverLetter: response.content,
     });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { success: false, message: "Generation failed" },
       { status: 500 }

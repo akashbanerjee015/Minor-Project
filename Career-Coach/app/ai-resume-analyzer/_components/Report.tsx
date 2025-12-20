@@ -99,17 +99,20 @@ const skills = data?.sections?.skills?.score ?? 0;
           </div>
 
           {/* TIPS FOR IMPROVEMENT */}
-          <div className="bg-white rounded-xl shadow-md  p-6">
-            <h3 className="font-semibold text-gray-800 mb-4">Tips for Improvement</h3>
+          <div className="bg-white rounded-xl shadow-md p-6">
+             <h3 className="font-semibold text-gray-800 mb-4">Tips for Improvement</h3>
 
-            <div className="space-y-4">
-              {tips.map((tip: string, i: number) => (
-                <div key={i}>
-                  <h4 className="font-medium text-gray-700 mb-1">{tip}</h4>
-                </div>
-              ))}
-            </div>
-          </div>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+         {tips.length > 0 ? (
+         tips.map((tip: string, i: number) => (
+        <li key={i}>{tip}</li>
+       ))
+         ) : (
+       <li>No critical improvements required.</li>
+    )}
+  </ul>
+</div>
+
 
           {/* WHAT’S GOOD + NEEDS IMPROVEMENT SIDE BY SIDE */}
           <div className="grid grid-cols-2 gap-4 mt-6 mb-6">

@@ -29,7 +29,7 @@ export default function CoverLetterPage() {
     setLoading(false);
   };
 
-  // 🔹 Download as TXT
+  // Download as TXT (ATS SAFE)
   const downloadTXT = () => {
     const blob = new Blob([coverLetter], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
@@ -42,12 +42,9 @@ export default function CoverLetterPage() {
     URL.revokeObjectURL(url);
   };
 
-  // 🔹 Download as PDF
+  // Download as PDF
   const downloadPDF = () => {
-    const pdf = new jsPDF({
-      unit: "pt",
-      format: "a4",
-    });
+    const pdf = new jsPDF({ unit: "pt", format: "a4" });
 
     const margin = 40;
     const pageWidth = pdf.internal.pageSize.getWidth() - margin * 2;
@@ -69,7 +66,6 @@ export default function CoverLetterPage() {
         ATS Cover Letter Generator
       </h1>
 
-      {/* Input Form */}
       <div className="grid gap-4 mb-6">
         <input
           className="border p-2"
@@ -108,7 +104,6 @@ export default function CoverLetterPage() {
         />
       </div>
 
-      {/* Generate Button */}
       <button
         onClick={generateCoverLetter}
         className="bg-black text-white px-6 py-2 rounded mb-6"
@@ -116,7 +111,6 @@ export default function CoverLetterPage() {
         {loading ? "Generating..." : "Generate Cover Letter"}
       </button>
 
-      {/* Editable Cover Letter */}
       {coverLetter && (
         <div>
           <h2 className="text-lg font-semibold mb-2">
@@ -129,12 +123,9 @@ export default function CoverLetterPage() {
             onChange={(e) => setCoverLetter(e.target.value)}
           />
 
-          {/* Action Buttons */}
           <div className="flex gap-4 mt-4">
             <button
-              onClick={() =>
-                navigator.clipboard.writeText(coverLetter)
-              }
+              onClick={() => navigator.clipboard.writeText(coverLetter)}
               className="bg-green-600 text-white px-4 py-2 rounded"
             >
               Copy Text

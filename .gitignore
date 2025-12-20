@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# ML models (DO NOT PUSH)
+ML-Folder/models/
+ML-Folder/**/*.pkl
+ML-Folder/**/*.npy
+
+# Dataset
+ML-Folder/data/*.csv
+
+# Environment
+.env
+venv/
