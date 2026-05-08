@@ -1,0 +1,15 @@
+sentence-transformers
+xgboost
+scikit-learn
+pandas
+numpy
+joblib
+tqdm
+matplotlib
+seaborn
+pdfplumber
+python-docx
+fastapi
+uvicorn
+python-multipart
+huggingface_hub
